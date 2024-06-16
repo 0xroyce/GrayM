@@ -138,7 +138,6 @@ The limbic system manages emotions and memory.
 1. **Clone the repository:**
     ```sh
     git clone <repository-url>
-    cd brain_project
     ```
 
 2. **Run the main script:**
