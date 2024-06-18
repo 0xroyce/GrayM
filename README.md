@@ -148,6 +148,10 @@ The limbic system manages emotions and memory.
 3. **Explore the modules:**
     - Each module can be extended with additional functions to simulate more detailed behaviors of the respective brain parts.
 
+
+4. **Add your Google Cloud JSON file to cerebrum/ folder**
+   - Generate your Google Cloud JSON file for Speech to Text and Text to Speech and add it to /cerebrum folder. Then update temporal_lobe.py with name of your file.
+
 ## Contributions
 
 Contributions are welcome! Feel free to submit issues or pull requests to improve the project.
