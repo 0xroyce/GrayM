@@ -3,6 +3,15 @@
 # Receives visual, auditory, and sensory inputs and directs them to appropriate areas for processing
 # thalamus/thalamus.py
 
+# thalamus/thalamus.py
+
+import os
+import sys
+
+# Add the project root directory to the Python path
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_root)
+
 from cerebrum.occipital_lobe import OccipitalLobe
 from cerebrum.temporal_lobe import TemporalLobe
 from cerebrum.frontal_lobe import FrontalLobe
@@ -14,7 +23,13 @@ class Thalamus:
         self.auditory_input = None
         self.sensory_input = None
         self.frontal_lobe = FrontalLobe(sensory_data={})
-        self.occipital_lobe = OccipitalLobe()
+
+        # Correct paths for OccipitalLobe
+        custom_model_path = os.path.join(project_root, 'cerebrum', 'runs', 'detect', 'custom_petr_model', 'weights',
+                                         'best.pt')
+        data_yaml_path = os.path.join(project_root, 'cerebrum', 'yolo_dataset', 'data.yaml')
+
+        self.occipital_lobe = OccipitalLobe(custom_model_path=custom_model_path, data_yaml_path=data_yaml_path)
         self.temporal_lobe = TemporalLobe(frontal_lobe=self.frontal_lobe, use_voice=use_voice)
 
     def relay_visual_input(self):
@@ -55,11 +70,8 @@ class Thalamus:
             self.generate_and_speak_response(auditory_data)
 
 
-# Usage example
 if __name__ == "__main__":
     thalamus = Thalamus(use_voice=True)
     thalamus.relay_visual_input()
     thalamus.perform_speech("System activated. Ready to tackle today's tasks?")
     thalamus.process_auditory_and_generate_response()
-
-

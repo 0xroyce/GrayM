@@ -1,5 +1,12 @@
 # main.py
 
+import sys
+import os
+
+# Add the project root directory to the Python path
+project_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(project_root)
+
 from thalamus.thalamus import Thalamus
 from memory.memory_storage import MemoryStorage
 import threading

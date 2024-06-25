@@ -152,6 +152,44 @@ The limbic system manages emotions and memory.
 4. **Add your Google Cloud JSON file to cerebrum/ folder**
    - Generate your Google Cloud JSON file for Speech to Text and Text to Speech and add it to /cerebrum folder. Then update temporal_lobe.py with name of your file.
 
+## GrayM uses YOLOv8 for visual recognition. Follow the steps below to set up and train the recognition engine.
+
+1. **Capture Images**
+
+Run capture_images.py to capture 300 images of the subject. The script captures an image every 0.2 seconds by default. You can modify the interval in the capture_images.py script if needed.
+
+```sh
+python cerebrum/capture_images.py
+```
+Instructions: Press 'c' to capture an image, and 'q' to quit. Enter the object's name when prompted. The captured images and metadata will be saved in the captured_images directory.
+2. **Prepare Dataset**
+
+Run prepare_dataset.py to organize the captured images and generate the necessary YOLO format labels.
+
+```sh
+python cerebrum/prepare_dataset.py
+```
+Instructions: This script copies the images to the yolo_dataset/images directory and creates placeholder labels in the yolo_dataset/labels directory. It also generates the data.yaml file required for YOLO training.
+
+3.**Train YOLO Model**
+
+Run train_yolo.py to train the YOLO model using the prepared dataset.
+
+```sh
+python cerebrum/train_yolo.py
+```
+Instructions: Ensure you have the ultralytics library installed. This script will train the YOLOv8 model and save the trained model in the trained_model directory.
+
+4.**Use the Recognise Engine**
+
+After training the model, you can use it for real-time object recognition. Run occipital_lobe.py to start the webcam and recognize objects using the trained model.
+
+```sh
+python cerebrum/occipital_lobe.py
+```
+
+Instructions: The script will load the trained YOLO model and start the webcam. Recognized objects will be displayed with bounding boxes and class names on the video feed.
+
 ## Contributions
 
 Contributions are welcome! Feel free to submit issues or pull requests to improve the project.

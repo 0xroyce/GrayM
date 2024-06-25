@@ -1,8 +1,6 @@
 # cerebrum/frontal_lobe.py
 # Reasoning, Planning, Problem-solving, Voluntary movement control, Talking
 
-# cerebrum/frontal_lobe.py
-
 from google.cloud import texttospeech
 from google.oauth2 import service_account
 import openai
@@ -85,6 +83,7 @@ class FrontalLobe:
         os.remove(tmp_file_path)
         print(f"Temporary file '{tmp_file_path}' deleted")
 
+    ##Temporary LLMs implementation as an off-ramp to General Intelligence
     def generate_response(self, prompt):
         load_dotenv()
         openai.api_key = os.getenv('OPENAI_API_KEY')
