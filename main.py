@@ -19,7 +19,7 @@ def main(use_voice=True):
     thalamus = Thalamus(use_voice=use_voice)
 
     # Perform speech before processing auditory input
-    thalamus.perform_speech("System activated. Ready to tackle today's tasks!")
+    # thalamus.perform_speech("System activated. Ready to tackle today's tasks!")
 
     # Start thread for auditory processing
     auditory_thread = threading.Thread(target=auditory_processing_thread, args=(thalamus,))

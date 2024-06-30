@@ -1,5 +1,7 @@
 # GrayM Project
 
+**This Project is in development. It's not completed.**
+
 The GrayM Project aims to simulate the main parts of the brain and their functionalities using Python, with the ultimate goal of creating an Artificial Intelligence brain. The project is organized into different modules, each representing a distinct part of the brain.
 
 ## Project Structure
