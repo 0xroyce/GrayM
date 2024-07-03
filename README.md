@@ -4,6 +4,10 @@
 
 The GrayM Project aims to simulate the main parts of the brain and their functionalities using Python, with the ultimate goal of creating an Artificial Intelligence brain. The project is organized into different modules, each representing a distinct part of the brain.
 
+## Related Projects
+
+https://github.com/0xroyce/Yolo-v8-face-detection-and-training
+
 ## Project Structure
 
 ```
