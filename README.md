@@ -7,6 +7,7 @@ The GrayM Project aims to simulate the main parts of the brain and their functio
 ## Related Projects
 
 https://github.com/0xroyce/Yolo-v8-face-detection-and-training
+
 https://github.com/0xroyce/yolov8-dct
 
 ## Project Structure
